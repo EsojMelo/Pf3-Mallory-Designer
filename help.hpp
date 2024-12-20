@@ -1,7 +1,7 @@
 /***************************************************************************
- *   mainwin.hpp                              Version 20230620.235516      *
+ *   help.hpp                                  Version 20230620.225809      *
  *                                                                         *
- *   Brief description                                                     *
+ *   Biblioteca para o codigo de help.cpp                                  *
  *   Copyright (C) 2023         by Ruben Carlo Benante                     *
  ***************************************************************************
  *   This program is free software; you can redistribute it and/or modify  *
@@ -27,11 +27,11 @@
 
 /* ---------------------------------------------------------------------- */
 /**
- * \file mainwin.hpp
+ * \file help.hpp
  * \ingroup GroupUnique
  * \brief Brief description
  * \details This is a CPP Header File with HPP extension 
- * \version 20230620.235516
+ * \version 20230620.225809
  * \date 2023-06-20
  * \author Ruben Carlo Benante <<rcb@beco.cc>>
  * \par Webpage
@@ -58,8 +58,8 @@
  *
  */
 
-#ifndef _MAINWIN_HPP
-#define _MAINWIN_HPP
+#ifndef _HELP_HPP
+#define _HELP_HPP
 
 /* ---------------------------------------------------------------------- */
 /* includes */
@@ -171,56 +171,49 @@ using namespace std;
 
 /* #include "libuser.hpp" */ /* your personal user library together with libuser.cpp */
 
-#include <QtWidgets>
-#include <QtSql>
-#include <QDebug>
-#include <QMainWindow>
-#include <QFileDialog>
-#include <QMessageBox>
-#include <QInputDialog>
+/* ---------------------------------------------------------------------- */
+/* definitions */
 
-#include "ui_mainmenu.h"
-#include "mainwin.hpp" /* To be created for this template if needed */
+#ifndef VERSION /* g++ -DVERSION="0.1.160612.142306" */
+#define VERSION "20221217.180026" /* Version Number (string) */
+#endif
+
+/* Debug */
+#ifndef DEBUG /* g++ -DDEBUG=1 */
+#define DEBUG 0 /* Activate/deactivate debug mode */
+#endif
+
+#if DEBUG==0
+#define NDEBUG
+#endif
+/* #include <cassert> */ /* Verify assumptions with assert. Turn off with #define NDEBUG */ 
+
+/* Debug message if DEBUG on */
+#define IFDEBUG(M) if(DEBUG) fprintf(stderr, "[DEBUG file:%s line:%d]: " M "\n", __FILE__, __LINE__); else {;}
+
+/* limits */
+#define SBUFF 256 /* string buffer */
+
+/* ---------------------------------------------------------------------- */
+/* globals */
+
+static int verb = 0; /**< verbose level, global within the file */
 
 /* ---------------------------------------------------------------------- */
 /* classes : better located at libxxx.h */
 
-class MainWindow : public QMainWindow
+class document
 {
-    Q_OBJECT
-
-public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
-
-private slots:
-    void navigateToHome();
-    void navigateToEstoque();
-
-private:
-    QSqlDatabase db;
-    Ui::MainWindow *ui;
-
-    void setupSizeOptions();
-    void setupPatternOptions();
-    void setupDatabase();
-    void loadDataFromDatabase();
-    void addItemToDatabase(const QString &table, const QString &size, const QString &pattern, int quantity);
-    void removeItemFromDatabase(const QString &table, const QString &size, const QString &pattern, int quantity);
-    // Métodos para manipular estoque
-    void handleAddEntrada();
-    void handleAddSaida();
-    void handleRemoveEntrada();
-    void handleRemoveSaida();
-
-    // Métodos auxiliares
-    void addItemToTreeWidget(QTreeWidget *treeWidget, const QString &title);
-    void removeSelectedItemFromTreeWidget(QTreeWidget *treeWidget);
+    public:
+        void help(void); /* print some help */
+        void copyr(void); /* print version and copyright information */
 };
 
+/* add more classes here */
 
-#endif /* NOT def _MAINWIN_H */
+#endif /* NOT def _HELP_HPP */
 
 /* ---------------------------------------------------------------------- */
 /* vi: set ai et ts=4 sw=4 tw=0 wm=0 fo=croql : CPP config - Vim modeline */
 /* Template by Dr. Beco <rcb at beco dot cc> Version 20220718.172615      */
+

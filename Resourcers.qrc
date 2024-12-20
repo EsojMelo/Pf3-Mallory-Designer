@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>images/Estampa.png</file>
+        <file>images/Batman.jpg</file>
+        <file>images/Boba-Fett.jpg</file>
+        <file>images/Capitao-America.jpg</file>
+        <file>images/Carrinho.jpg</file>
+        <file>images/Cell.jpg</file>
+        <file>images/Coringa.jpg</file>
+        <file>images/Darth-Vader.jpg</file>
+        <file>images/Flash.jpg</file>
+        <file>images/foto-perfil.jpg</file>
+        <file>images/Goku.jpg</file>
+        <file>images/Homem-Aranha.jpg</file>
+        <file>images/Homem-de-ferro.jpg</file>
+        <file>images/Hulk.jpg</file>
+        <file>images/Kratos.jpg</file>
+        <file>images/Lanterna-Verde.jpg</file>
+        <file>images/logo-poli.png</file>
+        <file>images/Lupa.jpg</file>
+        <file>images/Naruto.jpg</file>
+        <file>images/Pantera-Negra.jpg</file>
+        <file>images/Scorpion.jpg</file>
+        <file>images/Sub-zero.jpg</file>
+        <file>images/Super-man.jpg</file>
+        <file>images/Tasks.jpg</file>
+        <file>images/Thor.jpg</file>
+    </qresource>
+</RCC>

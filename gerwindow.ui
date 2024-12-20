@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GerWindow</class>
+ <widget class="QMainWindow" name="GerWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>782</width>
+      <height>518</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="homePage_2">
+     <layout class="QVBoxLayout" name="homeLayout_2">
+      <item>
+       <widget class="QLabel" name="homeLabel_2">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="Resourcers.qrc">:/images/images/Estampa.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="estoquePage_2">
+     <layout class="QVBoxLayout" name="estoqueLayout_2">
+      <item>
+       <layout class="QHBoxLayout" name="estoqueControlsLayout_2">
+        <item>
+         <widget class="QPushButton" name="addEntradaButton_2">
+          <property name="text">
+           <string>Adicionar Entrada</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="removeEntradaButton_2">
+          <property name="text">
+           <string>Remover Entrada</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="addSaidaButton_2">
+          <property name="text">
+           <string>Adicionar Saída</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="removeSaidaButton_2">
+          <property name="text">
+           <string>Remover Saída</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="estoqueTreeLayout_2">
+        <item>
+         <layout class="QVBoxLayout" name="entradaLayout_2">
+          <item>
+           <widget class="QLabel" name="entradaLabel_2">
+            <property name="text">
+             <string>Entradas</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTreeWidget" name="treeWidget_3">
+            <column>
+             <property name="text">
+              <string>id</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Tamanho</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Estampa</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Quantidade</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="saidaLayout_2">
+          <item>
+           <widget class="QLabel" name="saidaLabel_2">
+            <property name="text">
+             <string>Saídas</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTreeWidget" name="treeWidget_4">
+            <column>
+             <property name="text">
+              <string>id</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Tamanho</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Estampa</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Quantidade</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="navigationFrame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>782</width>
+      <height>44</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <layout class="QHBoxLayout" name="navigationLayout_2">
+     <item>
+      <widget class="QPushButton" name="homeButton_2">
+       <property name="text">
+        <string>Home</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="text">
+        <string>Estoque</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="estoqueButton_RegisterEmployee">
+       <property name="text">
+        <string>Cadastro funcionário</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_ManageEmployee">
+       <property name="text">
+        <string>Gerenciar funcionários</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="Resourcers.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,7 +1,7 @@
 /***************************************************************************
- *   exN.cpp                                  Version 20230620.225755      *
+ *   help.cpp                                 Version 20230620.225755      *
  *                                                                         *
- *   Programa Principal                                                    *
+ *   Codigo de help e documentacao                                         *
  *   Copyright (C) 2023         by Ruben Carlo Benante                     *
  ***************************************************************************
  *   This program is free software; you can redistribute it and/or modify  *
@@ -25,59 +25,47 @@
  *   Phone: +55 (81) 3184-7555                                             *
  ***************************************************************************/
 
-/*
- * Instrucoes para compilar:
- *   $ make exN.out
- * Leia mais detalhes no arquivo INSTALL
- */
-
 /* ---------------------------------------------------------------------- */
 /* includes */
-
-#include "ui_mainmenu.h"
 #include "help.hpp" /* To be created for this template if needed */
-#include "mainwin.hpp"
-#include "loginwindow.h"
-#include <QFile>
-#include <QApplication>
+
 /* ---------------------------------------------------------------------- */
 /* definitions */
 
-/* limits */
-#define SBUFF 256 /* string buffer */
+#define ANSWER 42
 
 /* ---------------------------------------------------------------------- */
-/* This function does ...
- * It receives as input ...
- * It returns ...
+/* methods */
+
+/* ---------------------------------------------------------------------- */
+/* Prints help information 
+ *  usually called by opt -h or --help
  */
-int main(int argc, char **argv)
+void document::help(void)
 {
-    /* local declarations */
-
-    /* Q_INIT_RESOURCE(x); */
-
-
-
-    QApplication app(argc, argv);
-
-
-    QFile file("Estilo.qss");
-    file.open(QFile::ReadOnly);
-
-    QString styleSheet { QLatin1String(file.readAll()) };
-
-    app.setStyleSheet(styleSheet);
-
-    LoginWindow win;
-
-
-    win.show();
-
-    return app.exec();
+    IFDEBUG("help()");
+    /* printf("%s - %s\n", "exN", "Brief description"); */
+    cout << "exN - Brief description\n";
+    cout << "\nUsage: exN\n\n";
+    cout << "This program does...\n";
+    /* add more stuff here */
+    cout << "\nExit status:\n\t0 if ok.\n\t1 some error occurred.\n";
+    cout << "\nTodo:\n\tLong options not implemented yet.\n";
+    cout << "\nAuthor:\n\tWritten by Ruben Carlo Benante <rcb@beco.cc>\n\n";
+    return;
 }
 
-/* add more functions here */
+/* ---------------------------------------------------------------------- */
+/* Prints version and copyright information 
+ *  usually called by opt -V
+ */
+void document::copyr(void)
+{
+    IFDEBUG("copyr()");
+    cout << "exN - Version " << VERSION << "\n";
+    cout << "\nCopyright (C) 2023 Ruben Carlo Benante <rcb@beco.cc>, GNU GPL version 2 <http://gnu.org/licenses/gpl.html>. This  is  free  software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law. USE IT AS IT IS. The author takes no responsability to any damage this software may inflige in your data.\n\n";
+    return;
+}
 
 /* ---------------------------------------------------------------------- */
 /* vi: set ai et ts=4 sw=4 tw=0 wm=0 fo=croql : CPP config - Vim modeline */

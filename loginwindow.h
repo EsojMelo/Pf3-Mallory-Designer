@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <mainwin.hpp>
 
+
 namespace Ui {
 class LoginWindow;
 }
@@ -19,7 +20,9 @@ public:
 private slots:
     void on_pushButton_Login_clicked();
 
-    void on_pushButton_2_clicked();
+    void on_pushButton_CreateAccount_clicked();
+
+    void on_pushButton_Debug_clicked();
 
 private:
     Ui::LoginWindow *ui;

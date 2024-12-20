@@ -1,0 +1,4 @@
+#ifndef GERENTEWINDOW_H
+#define GERENTEWINDOW_H
+
+#endif // GERENTEWINDOW_H
